@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="https://ds.44670.org/icon.png">
+    <link href="dark.css" rel="stylesheet">
+    <title>DeSmuME-WASM Fork</title>
+    <!-- Add hint for search engine -->
+    <meta name="description"
+        content="This is a personal fork of DeSmuME-WASM, a web emulator for playing NDS games, designed for iOS (iPhone and iPad) and also workable for other devices.">
+    <meta name="keywords" content="NDS, GBA, iOS, iPhone, iPad, emulator, DS, Safari, online, PWA">
+    <meta name="author" content="44670">
+</head>
+<body>
+    <style>
+        html,
+        body {
+            overflow-x: hidden;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            cursor: inherit;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            padding: 0;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            font-family: 'Myriad Set Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        canvas {
+            position: absolute;
+            z-index: 1;
+        }
+
+        #msg-layer {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: 40vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 3;
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+        }
+
+        #vk-layer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            touch-action: none;
+            opacity: 0.3;
+        }
+
+        #menu {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 4;
+            overflow: hidden scroll;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+        }
+
+        #menu button {
+            background: transparent;
+        }
+
+        #menu button:active {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        a,
+        a:visited {
+            color: white;
+
+        }
+
+        .vk-round {
+            text-align: center;
+            vertical-align: middle;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .vk-round-rect {
+            border-radius: 0.5em;
+            display: inline-block;
+        }
+
+
+        .vk {
+            color: #000;
+            background-color: #fff;
+            position: absolute;
+            z-index: 1;
+            text-align: center;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .vk-touched {}
+
+        .link {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: 1px solid #fff;
+            height: 0;
+        }
+    </style>
+    <div id="welcome" class="menu">
+        <h1>Redirecting</h1>
+        <div id="loading">Click <a href="./">here</a> if not redirected automatically</div>
+    </div>
+    <script src="localforage.js"></script>
+    <script src="pako.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+    	window.location = "https://octospacc.gitlab.io/Web-Archives-Misc/Repo/DeSmuME" + window.location.hash;
+    </script>
+</body>
+</html>
